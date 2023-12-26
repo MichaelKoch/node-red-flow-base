@@ -1,0 +1,47 @@
+[
+    {
+        "id": "04cc29c8dc1d1e4c",
+        "type": "tab",
+        "label": "Flow 1",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "020cd4eb43d900a0",
+        "type": "comment",
+        "z": "04cc29c8dc1d1e4c",
+        "name": "WELCOME TO NODE RED @ Hugo Boss",
+        "info": "sdfgsdfgsdf",
+        "x": 460,
+        "y": 100,
+        "wires": []
+    },
+    {
+        "id": "0773589abc9edba7",
+        "type": "inject",
+        "z": "04cc29c8dc1d1e4c",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 320,
+        "y": 280,
+        "wires": [
+            []
+        ]
+    }
+]
