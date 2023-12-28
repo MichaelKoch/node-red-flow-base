@@ -1,6 +1,6 @@
 # This is a basic workflow to help you get started with Actions
 env:
-  SERVER: production
+  RELEASE_NAME: production
 
 
 name: BUILD PUBLIC HELM REPO
@@ -26,7 +26,6 @@ jobs:
         with:
           version: 'latest' # default is latest (stable)
           token: ${{ secrets.GITHUB_TOKEN }} # only needed if version is 'latest'
-         
       # Runs a set of commands using the runners shell
       - name: Run script
-        run: echo $SERVER 
+        run: build 

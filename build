@@ -1,2 +1,3 @@
 #!/bin/bash
-helm template https://michaelkoch.github.io/charts/node-red-0.0.1.tgz
+helm template $RELEASE_NAME https://michaelkoch.github.io/charts/node-red-0.0.1.tgz \
+> $RELEASE_NAME.dist.yaml
