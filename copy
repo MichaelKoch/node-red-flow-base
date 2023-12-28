@@ -1,3 +1,4 @@
 #!/bin/bash
+cp -n templates/* .
 cp -n tools/templates/* .
  

@@ -1,3 +1,3 @@
 #!/bin/bash
-helm template $RELEASE_NAME https://michaelkoch.github.io/charts/node-red-0.0.1.tgz \
-> $RELEASE_NAME.dist.yaml
+sh copy
+sh build.k8s

@@ -1,0 +1,7 @@
+#!/bin/bash
+sh copy
+helm template $RELEASE_NAME https://michaelkoch.github.io/charts/node-red-0.0.1.tgz \
+--set-file flows=flows.json \
+--set-file package=package.json \
+--set-file settings=settings.js \
+> $RELEASE_NAME.dist.yaml
