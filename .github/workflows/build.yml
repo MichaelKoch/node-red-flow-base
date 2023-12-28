@@ -1,4 +1,7 @@
 # This is a basic workflow to help you get started with Actions
+env:
+  SERVER: production
+
 
 name: BUILD PUBLIC HELM REPO
 # Controls when the workflow will run
@@ -14,20 +17,8 @@ on:
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
-  # This workflow contains a single job called "build"
   build:
-    # The type of runner that the job will run on
     runs-on: ubuntu-latest
-    permissions:
-      pages: write      # to deploy to Pages
-      id-token: write   # to verify the deployment originates from an appropriate source
-
-    # Deploy to the github-pages environment
-    environment:
-      name: github-pages
-      url: https://michaelkoch.github.io/charts
-
-    # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v3
@@ -38,4 +29,4 @@ jobs:
          
       # Runs a set of commands using the runners shell
       - name: Run script
-        run: echo $github-pages 
+        run: echo $SERVER 
