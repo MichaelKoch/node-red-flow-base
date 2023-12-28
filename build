@@ -1,0 +1,2 @@
+#!/bin/bash
+helm template https://michaelkoch.github.io/charts/node-red-0.0.1.tgz
