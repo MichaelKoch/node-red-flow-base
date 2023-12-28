@@ -1,3 +1,6 @@
 #!/bin/bash
+export $(grep -v '^#' .env | xargs)
+mkdir -p dist
 sh copy
 sh build.k8s
+sh build.argocd

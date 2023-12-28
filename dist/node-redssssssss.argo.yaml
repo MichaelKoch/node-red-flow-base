@@ -1,19 +1,19 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:  
-  name: ${RELEASE_NAME}
+  name: node-redssssssss
 spec:
   destination:
-    namespace: ${NAMESPACE}
+    namespace: flows
     server: https://kubernetes.default.svc
-  project: ${PROJECT}
+  project: low-code
   source:
     directory:
       jsonnet: {}
       recurse: true
     path: release
     repoURL: >-
-      ${REPO_URL}
+      https://michaelkoch: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@github.com/MichaelKoch/k8s.cliap.de.git
     targetRevision: HEAD
   syncPolicy:
     syncOptions:

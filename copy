@@ -1,4 +1,6 @@
 #!/bin/bash
-cp -n templates/* .
-cp -n tools/templates/* .
+rm temp -R
+mkdir -p temp
+cp $SOURCE/*.* ./temp 
+cp -n templates/* ./temp
  

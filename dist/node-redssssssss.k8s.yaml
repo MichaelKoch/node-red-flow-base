@@ -3,11 +3,11 @@
 apiVersion: v1
 kind: ServiceAccount
 metadata:
-  name: release-name-node-red
+  name: node-redssssssss
   labels:
     helm.sh/chart: node-red-0.0.1
     app.kubernetes.io/name: node-red
-    app.kubernetes.io/instance: release-name
+    app.kubernetes.io/instance: node-redssssssss
     app.kubernetes.io/version: "0.0.1"
     app.kubernetes.io/managed-by: Helm
 ---
@@ -15,21 +15,67 @@ metadata:
 apiVersion: v1
 kind: ConfigMap
 metadata:
-  name: release-name-config
+  name: node-redssssssss-config
 data:
   flows.json: |-
     [
-      
+        {
+            "id": "04cc29c8dc1d1e4c",
+            "type": "tab",
+            "label": "Flow 1",
+            "disabled": false,
+            "info": "",
+            "env": []
+        },
+        {
+            "id": "020cd4eb43d900a0",
+            "type": "comment",
+            "z": "04cc29c8dc1d1e4c",
+            "name": "WELCOME TO NODE RED @ Hugo Boss",
+            "info": "sdfgsdfgsdf",
+            "x": 460,
+            "y": 100,
+            "wires": []
+        },
+        {
+            "id": "0773589abc9edba7",
+            "type": "inject",
+            "z": "04cc29c8dc1d1e4c",
+            "name": "",
+            "props": [
+                {
+                    "p": "payload"
+                },
+                {
+                    "p": "topic",
+                    "vt": "str"
+                }
+            ],
+            "repeat": "",
+            "crontab": "",
+            "once": false,
+            "onceDelay": 0.1,
+            "topic": "",
+            "payload": "",
+            "payloadType": "date",
+            "x": 320,
+            "y": 280,
+            "wires": [
+                []
+            ]
+        }
     ]
   package.json: |-
     {
-        "name": "node-red-project-template",
+        "name": "my-project-00ssss1",
         "description": "A Node-RED Project",
         "version": "0.0.1",
-        "private": true,
-        "dependencies": {
-            "@node-red-contrib-themes/theme-collection": "^3.1.7",
-            "node-red-contrib-throttle": "~0.1.7"
+        "dependencies": {},
+        "node-red": {
+            "settings": {
+                "flowFile": "flows.json",
+                "credentialsFile": "flows_cred.json"
+            }
         }
     }
   settings.js: |-
@@ -546,11 +592,11 @@ data:
 kind: PersistentVolumeClaim
 apiVersion: v1
 metadata:
- name: release-name-node-red
+ name: node-redssssssss
  labels:
     helm.sh/chart: node-red-0.0.1
     app.kubernetes.io/name: node-red
-    app.kubernetes.io/instance: release-name
+    app.kubernetes.io/instance: node-redssssssss
     app.kubernetes.io/version: "0.0.1"
     app.kubernetes.io/managed-by: Helm
 spec:
@@ -565,11 +611,11 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: release-name-node-red
+  name: node-redssssssss
   labels:
     helm.sh/chart: node-red-0.0.1
     app.kubernetes.io/name: node-red
-    app.kubernetes.io/instance: release-name
+    app.kubernetes.io/instance: node-redssssssss
     app.kubernetes.io/version: "0.0.1"
     app.kubernetes.io/managed-by: Helm
 spec:
@@ -581,31 +627,31 @@ spec:
       name: http
   selector:
     app.kubernetes.io/name: node-red
-    app.kubernetes.io/instance: release-name
+    app.kubernetes.io/instance: node-redssssssss
 ---
 # Source: node-red/templates/deployment.yaml
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: release-name-node-red
+  name: node-redssssssss
   labels:
     helm.sh/chart: node-red-0.0.1
     app.kubernetes.io/name: node-red
-    app.kubernetes.io/instance: release-name
+    app.kubernetes.io/instance: node-redssssssss
     app.kubernetes.io/version: "0.0.1"
     app.kubernetes.io/managed-by: Helm
 spec:
   selector:
     matchLabels:
       app.kubernetes.io/name: node-red
-      app.kubernetes.io/instance: release-name
+      app.kubernetes.io/instance: node-redssssssss
   template:
     metadata:
       labels:
         app.kubernetes.io/name: node-red
-        app.kubernetes.io/instance: release-name
+        app.kubernetes.io/instance: node-redssssssss
     spec:
-      serviceAccountName: release-name-node-red
+      serviceAccountName: node-redssssssss
       securityContext:
         {}
       initContainers:
@@ -633,15 +679,15 @@ spec:
               protocol: TCP
           livenessProbe:
             httpGet:
-              path: /sandbox/release-name
+              path: /sandbox/node-redssssssss
               port: http
           readinessProbe:
             httpGet:
-              path: /sandbox/release-name
+              path: /sandbox/node-redssssssss
               port: http
           env:
             - name: BASE_URL
-              value: "/sandbox/release-name"
+              value: "/sandbox/node-redssssssss"
           resources:
             limits:
               cpu: 500m
@@ -650,27 +696,27 @@ spec:
       volumes:
         - name: config  
           configMap:
-            name: release-name-config
+            name: node-redssssssss-config
         - name: data
           persistentVolumeClaim:
-            claimName: release-name-node-red
+            claimName: node-redssssssss
 ---
 # Source: node-red/templates/hpa.yaml
 apiVersion: autoscaling/v2beta1
 kind: HorizontalPodAutoscaler
 metadata:
-  name: release-name-node-red
+  name: node-redssssssss
   labels:
     helm.sh/chart: node-red-0.0.1
     app.kubernetes.io/name: node-red
-    app.kubernetes.io/instance: release-name
+    app.kubernetes.io/instance: node-redssssssss
     app.kubernetes.io/version: "0.0.1"
     app.kubernetes.io/managed-by: Helm
 spec:
   scaleTargetRef:
     apiVersion: apps/v1
     kind: Deployment
-    name: release-name-node-red
+    name: node-redssssssss
   minReplicas: 1
   maxReplicas: 1
   metrics:
@@ -687,11 +733,11 @@ spec:
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
-  name: release-name-node-red
+  name: node-redssssssss
   labels:
     helm.sh/chart: node-red-0.0.1
     app.kubernetes.io/name: node-red
-    app.kubernetes.io/instance: release-name
+    app.kubernetes.io/instance: node-redssssssss
     app.kubernetes.io/version: "0.0.1"
     app.kubernetes.io/managed-by: Helm
 spec:
@@ -699,11 +745,11 @@ spec:
     - host: "k8s.cliap.de"
       http:
         paths:
-          - path:  /sandbox/release-name
+          - path:  /sandbox/node-redssssssss
             pathType: ImplementationSpecific
             backend:
               service:
-                name: release-name-node-red
+                name: node-redssssssss
                 port:
                   number: 1880
 ---
@@ -711,11 +757,11 @@ spec:
 apiVersion: v1
 kind: Pod
 metadata:
-  name: "release-name-node-red-test-connection"
+  name: "node-redssssssss-test-connection"
   labels:
     helm.sh/chart: node-red-0.0.1
     app.kubernetes.io/name: node-red
-    app.kubernetes.io/instance: release-name
+    app.kubernetes.io/instance: node-redssssssss
     app.kubernetes.io/version: "0.0.1"
     app.kubernetes.io/managed-by: Helm
   annotations:
@@ -725,5 +771,5 @@ spec:
     - name: wget
       image: busybox
       command: ['wget']
-      args: ['release-name-node-red:1880']
+      args: ['node-redssssssss:1880']
   restartPolicy: Never
