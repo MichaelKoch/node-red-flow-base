@@ -6,8 +6,8 @@ metadata:
 spec:
   project: ${PROJECT}
   source:
-    chart: node-red
-    repoURL: https://michaelkoch.github.io/charts
+    chart: https://michaelkoch.github.io/charts/node-red-0.0.1.tgz
+    repoURL: ${REPO_URL}
     targetRevision: 0.0.1
     helm:
       releaseName:  ${RELEASE_NAME}

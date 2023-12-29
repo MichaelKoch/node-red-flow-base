@@ -1,16 +1,16 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name:  node-redssssssss
-  namespace:  flows
+  name:  node-flow-argo
+  namespace:  sandbox
 spec:
-  project: low-code
+  project: default
   source:
     chart: node-red
     repoURL: https://michaelkoch.github.io/charts
     targetRevision: 0.0.1
     helm:
-      releaseName:  node-redssssssss
+      releaseName:  node-flow-001
   destination:
     server: "https://kubernetes.default.svc"
-    namespace: flows
+    namespace: sandbox
