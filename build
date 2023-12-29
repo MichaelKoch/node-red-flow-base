@@ -1,5 +1,5 @@
 #!/bin/bash
-export $(grep -v '^#' .env | xargs)
+export $(grep -v '^#' .env | xargs)  > /dev/null 2>&1
 mkdir -p dist
 sh copy
 sh build.k8s

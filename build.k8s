@@ -1,5 +1,5 @@
 #!/bin/bash
-export $(grep -v '^#' .env | xargs)
+export $(grep -v '^#' .env | xargs)  > /dev/null 2>&1
 helm template $RELEASE_NAME https://michaelkoch.github.io/charts/node-red-0.0.1.tgz \
 --set-file flows=temp/flows.json \
 --set-file package=temp/package.json \

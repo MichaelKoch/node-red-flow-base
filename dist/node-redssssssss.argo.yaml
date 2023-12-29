@@ -1,22 +1,16 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
-metadata:  
-  name: node-redssssssss
+metadata:
+  name:  node-redssssssss
+  namespace:  flows
 spec:
-  destination:
-    namespace: flows
-    server: https://kubernetes.default.svc
   project: low-code
   source:
-    directory:
-      jsonnet: {}
-      recurse: true
-    path: release
-    repoURL: >-
-      https://michaelkoch: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@github.com/MichaelKoch/k8s.cliap.de.git
-    targetRevision: HEAD
-  syncPolicy:
-    syncOptions:
-      - CreateNamespace=true
-      - Replace=true
-      
+    chart: node-red
+    repoURL: https://michaelkoch.github.io/charts
+    targetRevision: 0.0.1
+    helm:
+      releaseName:  node-redssssssss
+  destination:
+    server: "https://kubernetes.default.svc"
+    namespace: flows
